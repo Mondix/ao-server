@@ -549,15 +549,15 @@ Private Sub SetAttributesToNewUser(ByVal Userindex As Integer, ByVal UserClase A
             .Stats.UserHechizos(1) = 2
         
             If UserClase = eClass.Druid Then .Stats.UserHechizos(2) = 46
-            'Derillo Le asigno al Trabajador sus hechizos
-            If UserClase = eClass.Worker Then
-                .Stats.UserHechizos(1) = 2
-                .Stats.UserHechizos(2) = 3
-                .Stats.UserHechizos(3) = 9
-                .Stats.UserHechizos(4) = 12
-                .Stats.UserHechizos(5) = 21
-                .Stats.UserHechizos(6) = 30
-            End If
+        End If
+        'Derillo Le asigno al Trabajador sus hechizos
+        If UserClase = eClass.Worker Then
+            .Stats.UserHechizos(1) = 2
+            .Stats.UserHechizos(2) = 3
+            .Stats.UserHechizos(3) = 9
+            .Stats.UserHechizos(4) = 12
+            .Stats.UserHechizos(5) = 21
+            .Stats.UserHechizos(6) = 30
         End If
     
         .Stats.MaxHIT = 2
