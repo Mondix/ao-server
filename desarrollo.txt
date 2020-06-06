@@ -1,0 +1,19 @@
+------------
+Features
+-----------
+- Los hechizos se aprendan por nivel.
+- Subir exp
+- Poder asignar a magia y meditar al trabajador
+- Revisar los items que crea el trabajador
+
+
+
+---------
+Bugs
+----
+
+
+---------
+Realizados
+--------
+- Guardar la ip local del servidor.
