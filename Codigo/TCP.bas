@@ -498,20 +498,20 @@ Private Sub SetAttributesToNewUser(ByVal Userindex As Integer, ByVal UserClase A
         Next i
     
         .Stats.SkillPts = 10
-    
+        '[Derillo]
         Dim MiInt As Long
 
         MiInt = RandomNumber(1, .Stats.UserAtributos(eAtributos.Constitucion) \ 3)
     
-        .Stats.MaxHp = 15 + MiInt
-        .Stats.MinHp = 15 + MiInt
+        .Stats.MaxHp = 300 + MiInt
+        .Stats.MinHp = 300 + MiInt
     
         MiInt = RandomNumber(1, .Stats.UserAtributos(eAtributos.Agilidad) \ 6)
 
         If MiInt = 1 Then MiInt = 2
     
-        .Stats.MaxSta = 20 * MiInt
-        .Stats.MinSta = 20 * MiInt
+        .Stats.MaxSta = 100 * MiInt
+        .Stats.MinSta = 100 * MiInt
     
         .Stats.MaxAGU = 100
         .Stats.MinAGU = 100
@@ -521,7 +521,7 @@ Private Sub SetAttributesToNewUser(ByVal Userindex As Integer, ByVal UserClase A
     
         '<-----------------MANA----------------------->
         If UserClase = eClass.Mage Then 'Cambio en mana inicial (ToxicWaste)
-            MiInt = .Stats.UserAtributos(eAtributos.Inteligencia) * 3
+            MiInt = .Stats.UserAtributos(eAtributos.Inteligencia) * 7
             .Stats.MaxMAN = MiInt
             .Stats.MinMAN = MiInt
         ElseIf UserClase = eClass.Cleric Or _
@@ -529,9 +529,10 @@ Private Sub SetAttributesToNewUser(ByVal Userindex As Integer, ByVal UserClase A
                UserClase = eClass.Bard Or _
                UserClase = eClass.Assasin Or _
                UserClase = eClass.Bandit Or _
+               UserClase = eClass.Worker Or _
                UserClase = eClass.Paladin Then
-            .Stats.MaxMAN = 50
-            .Stats.MinMAN = 50
+            .Stats.MaxMAN = 250
+            .Stats.MinMAN = 250
         Else
             .Stats.MaxMAN = 0
             .Stats.MinMAN = 0
@@ -548,7 +549,15 @@ Private Sub SetAttributesToNewUser(ByVal Userindex As Integer, ByVal UserClase A
             .Stats.UserHechizos(1) = 2
         
             If UserClase = eClass.Druid Then .Stats.UserHechizos(2) = 46
-
+            'Derillo Le asigno al Trabajador sus hechizos
+            If UserClase = eClass.Worker Then
+                .Stats.UserHechizos(1) = 2
+                .Stats.UserHechizos(2) = 3
+                .Stats.UserHechizos(3) = 9
+                .Stats.UserHechizos(4) = 12
+                .Stats.UserHechizos(5) = 21
+                .Stats.UserHechizos(6) = 30
+            End If
         End If
     
         .Stats.MaxHIT = 2
