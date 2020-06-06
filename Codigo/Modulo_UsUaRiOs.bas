@@ -798,9 +798,10 @@ Public Sub CheckUserLevel(ByVal Userindex As Integer, Optional ByVal PrintInCons
                     AumentoHIT = 1
                     AumentoMANA = 2.8 * .Stats.UserAtributos(eAtributos.Inteligencia)
                     AumentoSTA = AumentoSTMago
-                
+                'Derillo Aumento la cantidad de mana y danio que recibe por nivel
                 Case eClass.Worker
-                    AumentoHIT = 2
+                    AumentoHIT = 6
+                    AumentoMANA = 2.8 * .Stats.UserAtributos(eAtributos.Inteligencia)
                     AumentoSTA = AumentoSTTrabajador
                 
                 Case eClass.Cleric
@@ -1905,7 +1906,7 @@ Public Sub UserDie(ByVal Userindex As Integer, Optional ByVal AttackerIndex As I
         ' Retos nVSn. User muere
         If AttackerIndex <> 0 Then
             If .flags.SlotReto > 0 Then
-                Call Retos.UserdieFight(Userindex, AttackerIndex, False)
+                Call Retos.UserDieFight(Userindex, AttackerIndex, False)
             End If
         End If
     End With
